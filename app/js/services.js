@@ -1,19 +1,24 @@
+/**
+ * @fileOverview  	I contain all of the services for the application.
+ *
+ * @author 			John Allen <jallen@bbg.gov>
+ * @version 		1.0.0
+ * @module 			services.js
+ */
 'use strict';
 
 /* Services */
 angular.module('myApp.services', [])
 
-/*
-* simple value service from the oritional Angular seed app
-*/
+/**
+ * simple value service from the oritional Angular seed app
+ */
 .value('version', '0.1')
 
-
-
-/*
-* I am the d3 Service. 
-* I am used for scribbleing.
-*/
+/**
+ * I am the d3 Service. 
+ * I am used for scribbleing.
+ */
 .factory('d3Service', ['$document', '$window', '$q', '$rootScope', function($document, $window, $q, $rootScope) {
 	var d = $q.defer(),
 	
@@ -42,14 +47,10 @@ angular.module('myApp.services', [])
 	return d3service;
 }])
 
-
-
-
-
-/*
-* I am the Scribble Service. 
-* I am used for scribbleing.
-*/
+/**
+ * I am the Scribble Service. 
+ * I am used for scribbleing.
+ */
 .factory('ScribbleService', function() {
 
 	var person = {
@@ -94,14 +95,12 @@ angular.module('myApp.services', [])
 	}
 })
 
-
-
-/*
-* I am the Name Trick Service. 
-* I provide basic functions to do things with stings like reverse,
-* ucase, just stupid kinda things.
-*
-*/
+/**
+ * I am the Name Trick Service. 
+ * I provide basic functions to do things with stings like reverse,
+ * ucase, just stupid kinda things.
+ *
+ */
 .factory('nametrickFactory', function() {
 	return {
 
@@ -117,13 +116,11 @@ angular.module('myApp.services', [])
 	}
 })
 
-
-
-/*
-* I am the Moment Service. 
-* I provide date formating via the moment.js lib. I am a wrapper for the 
-* moment.js lib.
-*/
+/**
+ * I am the Moment Service. 
+ * I provide date formating via the moment.js lib. I am a wrapper for the 
+ * moment.js lib.
+ */
 .factory('Moment', function() {
 	return {
 		format : function(date) {
@@ -132,18 +129,15 @@ angular.module('myApp.services', [])
 	};
 })
 
-
-
-/*
-* I am the Todo Service. 
-* I am the peresitance mechinism for Todos.
-*/
+/**
+ * I am the Todo Service. 
+ * I am the peresitance mechinism for Todos.
+ */
 .factory('TodoService', [ '$rootScope','CONSTANTS', function($rootScope, CONSTANTS) {
 
 	var cleanUp = function() {
 		$rootScope.$broadcast(CONSTANTS.TODO_UPDATED_STRING);
 	}
-
 
 	// the persistance mechnism
 	var applicationTasks = [];
@@ -165,7 +159,6 @@ angular.module('myApp.services', [])
 		return (idstr);
 	};
 
-
 	// I return an empty Task object
 	var getNewTask = function(){
 		
@@ -175,7 +168,6 @@ angular.module('myApp.services', [])
 
 		return task;
 	};
-
 
 	// The API for Todos we return to the controllers
 	var ToDoAPI = {
@@ -193,7 +185,6 @@ angular.module('myApp.services', [])
 			// tell the app we updated
 			cleanUp();
 		},
-
 
 		// I return an array of tasks. Pass me an ID and I'll filter the tasks.
 		get : function( IDTask ){
@@ -218,7 +209,6 @@ angular.module('myApp.services', [])
 			}
 			return result;
 		},
-
 
 		// I Save or Update a todo
 		save : function( IDTask, taskText) {
@@ -252,7 +242,6 @@ angular.module('myApp.services', [])
 		}
 	}
 
-
 	/*
 	ToDoAPI.save('',"Foo the bar");
 	ToDoAPI.save('',"Sing a song");
@@ -260,7 +249,6 @@ angular.module('myApp.services', [])
 
 	return ToDoAPI;
 }])
-
 
 
 // TODO: implement wrapper code for one of the localstorage classes out there.

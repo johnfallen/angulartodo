@@ -1,9 +1,14 @@
+/**
+ * @fileOverview  	I contain all the controllers for the application.
+ *
+ * @author 			John Allen <jallen@bbg.gov>
+ * @version 		1.0.0
+ * @module 			controllers.js
+ */
 'use strict';
 
 /* Controllers */
 angular.module('myApp.controllers', [])
-
-
 
 /*
 * ScribbleController
@@ -22,10 +27,6 @@ angular.module('myApp.controllers', [])
 	];
 }])
 
-
-
-
-
 /*
 * ScribbleController
 * I am the Scribble controller.
@@ -35,12 +36,6 @@ angular.module('myApp.controllers', [])
 
 	$scope.person = ScribbleService.getPerson();
 }])
-
-
-
-
-
-
 
 /*
 * HomeController
@@ -56,8 +51,6 @@ angular.module('myApp.controllers', [])
 	// set the current time using the moment lib proxied by a service.
 	$scope.theTime = Moment.format("dddd, MMMM Do YYYY, h:mm:ss a");
 }])
-
-
 
 /*
 * AboutController
@@ -75,8 +68,6 @@ angular.module('myApp.controllers', [])
 						deserunt mollit anim id est laborum.";
 						
 }])
-
-
 
 /*
 * ContactController
@@ -104,8 +95,6 @@ angular.module('myApp.controllers', [])
 		$scope.showSubmittedName = true;
 	};
 }])
-
-
 
 /*
 * TodoController

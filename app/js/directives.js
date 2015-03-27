@@ -1,8 +1,14 @@
+/**
+ * @fileOverview  	I contain all of the angular directives.
+ *
+ * @author 			John Allen <jallen@bbg.gov>
+ * @version 		1.0.0
+ * @module 			directives.js
+ */
 'use strict';
 
 /* Directives */
 angular.module('myApp.directives', [])
-
 
 /******************************************************************************
 d3 Directives
@@ -116,11 +122,9 @@ d3 Directives
 	}}
 }])
 
-
-
-/*
-* scribble-directive
-*/
+/**
+ * scribble-directive
+ */
 .directive('scribbleDirective', ['ScribbleService', function(ScribbleService) {
 	
 	return function(scope, elm, attrs) {
@@ -128,11 +132,9 @@ d3 Directives
 	};
 }])
 
-
-
-/*
-* app-version
-*/
+/**
+ * app-version
+ */
 .directive('appVersion', ['version', function(version) {
 	
 	return function(scope, elm, attrs) {
@@ -140,11 +142,9 @@ d3 Directives
 	};
 }])
 
-
-
-/*
-* how-many-toDos
-*/
+/**
+ * how-many-toDos
+ */
 .directive('howManyToDos', ['TodoService', 'CONSTANTS', function ( TodoService, CONSTANTS ) {
 	
 	var howManyToDosDirecitive = {
@@ -167,41 +167,6 @@ d3 Directives
 
 		// update the count on the pages
 		elm.text( toDoCount );
-		
-		/*
-		// now set the bg color on the hompage directive
-		var parentElement = elm.parent();		
-		var parentID = parentElement[0].id;
-		var feedBackColor = '#fff';
-		
-		if ( parentID === CONSTANTS.HOME_PAGE_TODO_CONTENER_ID ){
-
-			console.log('we are checking:' + toDoCount);
-			console.log(toDoCount = 1);
-
-			if( toDoCount = 0 ){
-				feedBackColor =  '#fff';
-				console.log('should be whte:' + toDoCount);
-			}
-
-			if( toDoCount >= 1 ){
-				feedBackColor =  '#A6FFEB';
-				console.log('should be green:' + toDoCount);
-			}
-
-			if( toDoCount = 2 ){
-				feedBackColor =  '#FFFD67';
-				console.log('should be yellow:' + toDoCount);
-			}
-
-			if( toDoCount >= 3 ){
-				feedBackColor =  '#FF3A12';
-				console.log('should be red:' + toDoCount);
-			}
-
-			$(parentElement).css('background-color', feedBackColor);
-		}
-		*/
 	}
 
 	return howManyToDosDirecitive;

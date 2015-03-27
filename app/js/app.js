@@ -1,3 +1,11 @@
+/**
+ * @fileOverview  	I am the main application file. I bootstrap the application
+ *					and contain the router definitions.
+ *
+ * @author 			John Allen <jallen@bbg.gov>
+ * @version 		1.0.0
+ * @module 			app.js
+ */
 'use strict';
 
 
@@ -23,9 +31,9 @@ angular.module('myApp', [
 }])
 
 
-/*
-* CONATANTS:
-*/
+/**
+ * CONATANTS:
+ */
 .constant('CONSTANTS', {
 	TODO_UPDATED_STRING : "toDoModelUpdated",
 	HOME_PAGE_TODO_CONTENER_ID: "homePageToDoContainer"

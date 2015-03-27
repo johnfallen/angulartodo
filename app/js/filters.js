@@ -1,3 +1,10 @@
+/**
+ * @fileOverview  	I am a simple example of an exteranl filter code.
+ *
+ * @author 			John Allen <jallen@bbg.gov>
+ * @version 		1.0.0
+ * @module 			filters.js
+ */
 'use strict';
 
 /* Filters */
