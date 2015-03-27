@@ -1,0 +1,29 @@
+<h1>Contact BBG</h1>
+
+<div ng-controller="ContactController" method="post">
+
+	<form name="contactForm" ng-submit="saveContact()">
+		
+		<div class="fieldWrapper">
+			<label>First Name</label>
+			<span class="error" ng-show="contactForm.firstName.$error.required">*</span>
+			<input type="text" name="firstName" ng-model="firstName" required/>
+		</div>
+		
+		<div class="fieldWrapper">
+			<label>Last Name</label>
+			<span class="error" ng-show="contactForm.lastName.$error.required">*</span>
+			<input type="text" name="lastName" ng-model="lastName" required />
+		</div>
+		
+		<div class="buttonWrapper">
+			<input type="submit" />
+		</div>
+	</form>
+
+	<div ng-if="showSubmittedName">
+		<p>your name reversed is:  <b><i>{{echoFirstName}} {{echoLastName}}</i></b></p>
+	</div>
+</div>
+
+

@@ -1,0 +1,29 @@
+<h1>Todo List for BBG</h1>
+
+<div ng-controller="TodoController">
+	
+	<div ng-if="showToDoList">
+		<h2>Current Todo's : <span how-many-to-dos></span></h2>
+		<div ng-repeat="todo in todoList">
+				<button ng-click="delete(todo.IDTask)">delete</button>
+				<button ng-click="edit(todo.IDTask)">edit</button>
+				{{todo.task}} 
+		</div>
+	</div>
+	
+	<h2>Add a Todo</h2>
+	<form name="todoForm" ng-submit="save()">
+		
+		<input type="hidden" name="IDTask" value="{{IDTask}}"/>
+
+		<div class="fieldWrapper">
+			<label>Task</label>
+			<span class="error" ng-show="todoForm.task.$error.required">*</span>
+			<input type="text" name="task" ng-model="task" value="{{task}}" required />
+		</div>
+
+		<div class="buttonWrapper">
+			<input type="submit" />
+		</div>
+	</form>
+</div>
